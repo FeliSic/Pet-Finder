@@ -11,7 +11,7 @@
     "build:backend": "tsc --project tsconfig.backend.json",
     "build:frontend": "tsc --project tsconfig.frontend.json",
     "build": "yarn build:backend && yarn build:frontend",
-    "start": "node dist/backend/server.js",
+    "start": "node dist/backend/server/server.js",
     "typecheck": "tsc --noEmit --project tsconfig.backend.json && tsc --noEmit --project tsconfig.frontend.json"
   },
   "dependencies": {

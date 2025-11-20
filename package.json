@@ -1,0 +1,43 @@
+{
+  "name": "pet-finder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:backend": "ts-node-dev --respawn --transpile-only --project tsconfig.backend.json be-server/server/server.ts",
+    "dev:frontend": "live-server fe-client/public --port=8080 --open=/index.html",
+    "dev:frontend:watch": "concurrently \"tsc -w --project tsconfig.frontend.json\" \"live-server fe-client/public --port=8080 --open=/index.html\"",
+    "dev": "concurrently \"yarn dev:backend\" \"yarn dev:frontend\"",
+    "build:backend": "tsc --project tsconfig.backend.json",
+    "build:frontend": "tsc --project tsconfig.frontend.json",
+    "build": "yarn build:backend && yarn build:frontend",
+    "start": "node dist/backend/server.js",
+    "typecheck": "tsc --noEmit --project tsconfig.backend.json && tsc --noEmit --project tsconfig.frontend.json"
+  },
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.4.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "dropzone": "^6.0.0-beta.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "resend": "^6.4.2",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/dropzone": "^5.7.9",
+    "@types/express": "^5.0.5",
+    "@types/google.maps": "^3.58.1",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.1",
+    "concurrently": "^9.2.1",
+    "live-server": "^1.2.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}

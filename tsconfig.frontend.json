@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ES2020",
+    "lib": ["ES2020", "DOM"],
+    "outDir": "./dist/fe-client",
+    "rootDir": "./fe-client",
+    "types": ["google.maps"]
+  },
+  "include": ["fe-client/**/*"]
+}
